@@ -1,5 +1,0 @@
-C:\Users\smsil\Desktop\Kinect_2019_project\Kinect2019\Kinect2019\bin\Debug\Kinect2019.exe.config
-C:\Users\smsil\Desktop\Kinect_2019_project\Kinect2019\Kinect2019\obj\Debug\Kinect2019.csprojResolveAssemblyReference.cache
-C:\Users\smsil\Desktop\Kinect_2019_project\Kinect2019\Kinect2019\obj\Debug\App.g.cs
-C:\Users\smsil\Desktop\Kinect_2019_project\Kinect2019\Kinect2019\obj\Debug\Kinect2019_MarkupCompile.cache
-C:\Users\smsil\Documents\GitHub\kinectskeletondisplay\Kinect2019\bin\Debug\Kinect2019.exe.config
