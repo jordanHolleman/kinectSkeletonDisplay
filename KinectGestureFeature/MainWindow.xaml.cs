@@ -216,18 +216,23 @@ namespace KinectGestureFeature
             var activeHand = rightHand.Position.Z <= leftHand.Position.Z ? rightHand : leftHand;
             //get the hand's position relatively to the color image 
             var position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+            //var position with depth
+            
             //flip the cursor to match the active hand and update its posiition
             cursor.Flip(activeHand);
+            //cursor.Update(position);
+            //depthImagePoint Update
             cursor.Update(position);
 
             /**
              * TODO something like
              * if (activeHandPointer.getPosition is within button1)
-             *      if (activeHandPointer.isPressed)
+             *      if (activeHandPointer.isPressed or isGrippedInteraction)
              *              press button
              * not sure how this would look yet
              * */
-            
+             
+
         }
         
         
