@@ -193,8 +193,77 @@ namespace KinectGestureFeature
             leftHandXPosTextBox.Text = leftHand.Position.X.ToString();
             leftHandYPosTextBox.Text = leftHand.Position.Y.ToString();
             leftHandZPosTextBox.Text = leftHand.Position.Y.ToString();
+
+
+
+            Pen bonePen = new Pen(Brushes.White, 5);
+
+            //shoulders and arms
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.HandLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.WristLeft].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.WristLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.ElbowLeft].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.ElbowLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderLeft].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderCenter].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderCenter].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderRight].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderRight].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.ElbowRight].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.ElbowRight].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.WristRight].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.WristRight].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.HandRight].Position));
+
+            //mid section
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.Head].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderCenter].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.ShoulderCenter].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.Spine].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.Spine].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipCenter].Position));
+
+            //hips and legs
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.FootLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.AnkleLeft].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.AnkleLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.KneeLeft].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.KneeLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipLeft].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipLeft].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipCenter].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipCenter].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipRight].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.HipRight].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.KneeRight].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.KneeRight].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.AnkleRight].Position));
+            dc.DrawLine(bonePen,
+                this.SkeletonPointToScreen(skel.Joints[JointType.AnkleRight].Position),
+                this.SkeletonPointToScreen(skel.Joints[JointType.FootRight].Position));
+
+
             //tracking active user hands 
-            //maybe the only original code written in here
+            //mayskel.Joints[JointType.HipCenter];be the only original code written in here
             //just checks if the hand's x coord is higher than center hip's x coord
             Joint hipCenter = skel.Joints[JointType.HipCenter];
             

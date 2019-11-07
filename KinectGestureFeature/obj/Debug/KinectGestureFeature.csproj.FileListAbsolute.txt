@@ -18,3 +18,21 @@ C:\Users\smsil\Desktop\Kinect_2019_project\KinectGestureFeature\KinectGestureFea
 C:\Users\smsil\Desktop\Kinect_2019_project\KinectGestureFeature\KinectGestureFeature\obj\Debug\KinectGestureFeature.exe
 C:\Users\smsil\Desktop\Kinect_2019_project\KinectGestureFeature\KinectGestureFeature\obj\Debug\KinectGestureFeature.pdb
 C:\Users\smsil\Desktop\Kinect_2019_project\KinectGestureFeature\KinectGestureFeature\obj\Debug\KinectGestureFeature.csprojResolveAssemblyReference.cache
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectGestureFeature.exe.config
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectGestureFeature.exe
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectGestureFeature.pdb
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\Microsoft.Kinect.dll
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\Microsoft.Kinect.xml
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.csprojAssemblyReference.cache
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\MainWindow.g.cs
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\App.g.cs
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature_MarkupCompile.cache
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature_MarkupCompile.lref
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\MainWindow.baml
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.g.resources
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.Properties.Resources.resources
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.csproj.GenerateResource.cache
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.csproj.CoreCompileInputs.cache
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.csproj.CopyComplete
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.exe
+D:\School\2019-2020\Fall\Human Computer Interaction\Project\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.pdb
