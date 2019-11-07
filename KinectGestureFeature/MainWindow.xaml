@@ -1,9 +1,11 @@
-﻿<Window x:Class="KinectGestureFeature.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KinectGestureFeature"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013" x:Class="KinectGestureFeature.MainWindow"
+        xmlns:Controls="clr-namespace:KinectControls;assembly=KinectControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="843.412" Width="951.553" Loaded="WindowLoaded">
     <Grid Margin="0,0,-418,-432">
@@ -22,7 +24,13 @@
         <Label x:Name="label_Copy" Content="Active" HorizontalAlignment="Left" Margin="85,248,0,0" VerticalAlignment="Top" Height="28" Width="61"/>
         <TextBox x:Name="rightHandActiveTextBox" HorizontalAlignment="Left" Height="23" Margin="146,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
         <TextBox x:Name="leftHandActiveTextBox" HorizontalAlignment="Left" Height="23" Margin="7,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
-        <Label x:Name="label" Content="Active: when a hand is&#xA;above the waist &#xD;&#xA;&#xD;&#xA;dots go there -&gt;" HorizontalAlignment="Left" Margin="41,281,0,0" VerticalAlignment="Top" Height="82" Width="162"/>
+        <Label x:Name="label" Content="Active: when a hand is&#xA;above the waist &#xA;&#xA;dots go there -&gt;" HorizontalAlignment="Left" Margin="41,281,0,0" VerticalAlignment="Top" Height="82" Width="162"/>
+
+        <k:KinectTileButton x:Name="button1" Content="button1" HorizontalAlignment="Left" Margin="339,222,0,0" VerticalAlignment="Top" Height="54" Width="134"/>
+
+        <Controls:KinectCursor x:Name="cursor" Width="100" Height="100" />
+        
+        <k:KinectCircleButton x:Name="button2" Content="button2" HorizontalAlignment="Left" Margin="296,297,0,0" VerticalAlignment="Top" Height="113" Width="216" ContentForeground="#FF82FD06" ContentPressedForeground="#FFDA4B4B" Foreground="#FFEE0F0F"/>
 
     </Grid>
 </Window>

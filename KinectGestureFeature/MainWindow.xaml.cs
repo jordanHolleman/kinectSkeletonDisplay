@@ -53,6 +53,8 @@ namespace KinectGestureFeature
         private DrawingImage imageSource;
         private const double JointThickness = 10;
 
+        private HandPointer activeHandPointer;
+
    
         public MainWindow()
         {
@@ -101,15 +103,6 @@ namespace KinectGestureFeature
 
             }
 
-                
-
-            
-            
-
-
-
-
-
         }
 
         //Event handler for kinect sensor's SkeletonFrameReady 
@@ -136,7 +129,7 @@ namespace KinectGestureFeature
                         //RenderClippedEdges(skel, dc);
                         if (skel.TrackingState == SkeletonTrackingState.Tracked)
                         {
-                            this.drawBonesAndJoints(skel, dc);
+                            this.drawJoints(skel, dc);
                         }
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
                         {
@@ -158,14 +151,12 @@ namespace KinectGestureFeature
         }
 
         /**<summary>
-         * draws bones and joints
-         * work in progress, draws only points for this build
-         * "Just draw the rest of the fucking owl"
+         * draws joints
          * </summary>
          * <param name="skel">skellipoints to be drawn</param>
          * <param name="dc">drawing context to draw to</param>
          * */
-        private void drawBonesAndJoints(Skeleton skel, DrawingContext dc)
+        private void drawJoints(Skeleton skel, DrawingContext dc)
         {
             //render joints, bones TBA
             foreach (Joint joint in skel.Joints)
@@ -217,8 +208,44 @@ namespace KinectGestureFeature
                 {
                     leftHandActiveTextBox.Text = "no";
                 }
-            } 
+            }
+
+            //This should track a cursor to the active hand, needs testing
+            //selecting hand closest to sensor. Not sure if this is in the right place
+            //source: https://github.com/Vangos/kinect-controls
+            var activeHand = rightHand.Position.Z <= leftHand.Position.Z ? rightHand : leftHand;
+            //get the hand's position relatively to the color image 
+            var position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+            //flip the cursor to match the active hand and update its posiition
+            cursor.Flip(activeHand);
+            cursor.Update(position);
+
+            /**
+             * TODO something like
+             * if (activeHandPointer.getPosition is within button1)
+             *      if (activeHandPointer.isPressed)
+             *              press button
+             * not sure how this would look yet
+             * */
+            
         }
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
 
     }
 }

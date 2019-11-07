@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectGestureFeature", "KinectGestureFeature\KinectGestureFeature.csproj", "{74F38FA5-0A2E-42C1-A64A-2819B4076452}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectMenuButtonsWithCursorHopefully", "KinectGestureFeature\KinectMenuButtonsWithCursorHopefully.csproj", "{74F38FA5-0A2E-42C1-A64A-2819B4076452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

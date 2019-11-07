@@ -1,0 +1,17 @@
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectGestureFeature.exe.config
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectGestureFeature.exe
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectGestureFeature.pdb
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectControls.dll
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\Microsoft.Kinect.dll
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\KinectControls.pdb
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\bin\Debug\Microsoft.Kinect.xml
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\MainWindow.g.cs
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\App.g.cs
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature_MarkupCompile.cache
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature_MarkupCompile.lref
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\MainWindow.baml
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.g.resources
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.Properties.Resources.resources
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectMenuButtonsWithCursorHopefully.csproj.GenerateResource.Cache
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.exe
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.pdb
