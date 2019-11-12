@@ -23,10 +23,6 @@ using Microsoft.Kinect.Toolkit.Fusion;
 using Microsoft.Kinect.Toolkit.Interaction;
 using System.IO;
 
-
-
-
-
 namespace KinectGestureFeature
 {
     /// <summary>
@@ -34,7 +30,6 @@ namespace KinectGestureFeature
     /// </summary>
     public partial class MainWindow : Window
     {
-        //mostly stolen from SkeletonBasics-WPF, Microsoft
         //width & height of output display
         private const float RenderWidth = 640.0f;
         private const float RenderHeight = 480.0f;
@@ -113,8 +108,25 @@ namespace KinectGestureFeature
             {
                 if (skeletonFrame != null)
                 {
+                    
                     skeletons = new Skeleton[skeletonFrame.SkeletonArrayLength];
                     skeletonFrame.CopySkeletonDataTo(skeletons);
+                    //default reference
+                    //Skeleton skel = skeletons.Where(b => b.TrackingState == SkeletonTrackingState.Tracked).FirstOrDefault();
+                    //or
+                    //just choosing the first tracked skeleton
+                    Skeleton skel1 = skeletons[0];
+                    Joint handLeft = skel1.Joints[JointType.HandLeft];
+                    Joint handRight = skel1.Joints[JointType.HandRight];
+
+                    if (handLeft.TrackingState == JointTrackingState.Tracked && handRight.TrackingState == JointTrackingState.Tracked)
+                    {
+                        //selecting hand closest to sensor
+                        Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
+                        ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                        cursor.Flip(activeHand);
+                        cursor.Update(position);
+                    }
                 }
             }
             using (DrawingContext dc = this.drawingGroup.Open())
@@ -125,8 +137,6 @@ namespace KinectGestureFeature
                 {
                     foreach (Skeleton skel in skeletons)
                     {
-                        //render clipped edges, not implemented yet
-                        //RenderClippedEdges(skel, dc);
                         if (skel.TrackingState == SkeletonTrackingState.Tracked)
                         {
                             this.drawJoints(skel, dc);
@@ -134,6 +144,7 @@ namespace KinectGestureFeature
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
                         {
                             dc.DrawEllipse(this.centerPointBrush, null, this.SkeletonPointToScreen(skel.Position), bodyCenterThickness, bodyCenterThickness);
+                            
                         } 
 
                     }
@@ -175,6 +186,7 @@ namespace KinectGestureFeature
                     dc.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
+
             //writing hands' x, y, and z values 
             Joint rightHand = skel.Joints[JointType.WristRight];
             rightHandXPosTextBox.Text = rightHand.Position.X.ToString();
@@ -210,28 +222,22 @@ namespace KinectGestureFeature
                 }
             }
 
+            //old code, up for deletion
             //This should track a cursor to the active hand, needs testing
             //selecting hand closest to sensor. Not sure if this is in the right place
             //source: https://github.com/Vangos/kinect-controls
-            var activeHand = rightHand.Position.Z <= leftHand.Position.Z ? rightHand : leftHand;
+            //Joint activeHand = rightHand.Position.Z <= leftHand.Position.Z ? rightHand : leftHand;
             //get the hand's position relatively to the color image 
-            var position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+            //var position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
             //var position with depth
-            
+            //DepthImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(activeHand.Position, DepthImageFormat.Resolution640x480Fps30);
+            //ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution1280x960Fps12);
             //flip the cursor to match the active hand and update its posiition
-            cursor.Flip(activeHand);
+            //cursor.Flip(activeHand);
             //cursor.Update(position);
             //depthImagePoint Update
-            cursor.Update(position);
-
-            /**
-             * TODO something like
-             * if (activeHandPointer.getPosition is within button1)
-             *      if (activeHandPointer.isPressed or isGrippedInteraction)
-             *              press button
-             * not sure how this would look yet
-             * */
-             
+            //cursor.Update(activeHand.Position.X, activeHand.Position.Y);
+            //cursor.Update(activeHand.Position.X, activeHand.Position.Y);
 
         }
         

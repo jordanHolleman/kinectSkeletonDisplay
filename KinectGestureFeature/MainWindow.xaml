@@ -28,7 +28,7 @@
 
         <k:KinectTileButton x:Name="button1" Content="button1" HorizontalAlignment="Left" Margin="339,222,0,0" VerticalAlignment="Top" Height="54" Width="134"/>
 
-        <Controls:KinectCursor x:Name="cursor" Width="100" Height="100" />
+        <Controls:KinectCursor x:Name="cursor" Width="100" Height="100" Margin="259,601,1003,543" />
         
         <k:KinectCircleButton x:Name="button2" Content="button2" HorizontalAlignment="Left" Margin="296,297,0,0" VerticalAlignment="Top" Height="113" Width="216" ContentForeground="#FF82FD06" ContentPressedForeground="#FFDA4B4B" Foreground="#FFEE0F0F"/>
 

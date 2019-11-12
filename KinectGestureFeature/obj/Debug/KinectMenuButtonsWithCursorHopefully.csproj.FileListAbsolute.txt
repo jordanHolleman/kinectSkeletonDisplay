@@ -15,3 +15,4 @@ C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonD
 C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectMenuButtonsWithCursorHopefully.csproj.GenerateResource.Cache
 C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.exe
 C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectGestureFeature.pdb
+C:\Users\smsil\Desktop\Kinect_2019_project\kinectSkeletonDisplay\kinectSkeletonDisplay\KinectGestureFeature\obj\Debug\KinectMenuButtonsWithCursorHopefully.csprojResolveAssemblyReference.cache
