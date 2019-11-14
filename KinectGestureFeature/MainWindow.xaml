@@ -26,11 +26,12 @@
         <TextBox x:Name="leftHandActiveTextBox" HorizontalAlignment="Left" Height="23" Margin="7,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
         <Label x:Name="label" Content="Active: when a hand is&#xA;above the waist &#xA;&#xA;dots go there -&gt;" HorizontalAlignment="Left" Margin="41,281,0,0" VerticalAlignment="Top" Height="82" Width="162"/>
 
-        <k:KinectTileButton x:Name="button1" Content="button1" HorizontalAlignment="Left" Margin="339,222,0,0" VerticalAlignment="Top" Height="54" Width="134"/>
+        <k:KinectTileButton Click="Button1_Click" x:Name="button1" Content="button1" HorizontalAlignment="Left" Margin="339,222,0,0" VerticalAlignment="Top" Height="54" Width="134"/>
+        
 
         <Controls:KinectCursor x:Name="cursor" Width="100" Height="100" Margin="259,601,1003,543" />
         
-        <k:KinectCircleButton x:Name="button2" Content="button2" HorizontalAlignment="Left" Margin="296,297,0,0" VerticalAlignment="Top" Height="113" Width="216" ContentForeground="#FF82FD06" ContentPressedForeground="#FFDA4B4B" Foreground="#FFEE0F0F"/>
+        <k:KinectCircleButton Click="Button2_Click" x:Name="button2" Content="button2" HorizontalAlignment="Left" Margin="296,297,0,0" VerticalAlignment="Top" Height="113" Width="216" ContentForeground="#FF82FD06" ContentPressedForeground="#FFDA4B4B" Foreground="#FFEE0F0F"/>
 
     </Grid>
 </Window>

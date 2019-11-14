@@ -126,6 +126,20 @@ namespace KinectGestureFeature
                         ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
                         cursor.Flip(activeHand);
                         cursor.Update(position);
+                        //calling button1_click if active hand is over button1 and is pressed
+                        //need to double check if IsPressed is even the right method to use, could try isGripped
+                        if (activeHandPointer.GetIsOver(button1) && activeHandPointer.IsPressed)
+                        {
+                            //add event handler for button1 click
+                            //RoutedEventArgs e = new RoutedEventArgs();
+                            button1.Click += new RoutedEventHandler(Button1_Click);
+                        }
+                        //button2 being clicked if activeHand just passes over for testing purposes
+                        if (activeHandPointer.GetIsOver(button2))
+                        {
+                            button2.Click += new RoutedEventHandler(Button2_Click);
+                        }
+                        
                     }
                 }
             }
@@ -196,6 +210,7 @@ namespace KinectGestureFeature
             leftHandXPosTextBox.Text = leftHand.Position.X.ToString();
             leftHandYPosTextBox.Text = leftHand.Position.Y.ToString();
             leftHandZPosTextBox.Text = leftHand.Position.Y.ToString();
+            
             //tracking active user hands 
             //maybe the only original code written in here
             //just checks if the hand's x coord is higher than center hip's x coord
@@ -240,23 +255,19 @@ namespace KinectGestureFeature
             //cursor.Update(activeHand.Position.X, activeHand.Position.Y);
 
         }
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
 
 
+        
+        
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        { 
+            MessageBox.Show("button1 pressed with active hand hopefully");
+            //e.Handled = true;
+        }
 
-
-
-
-
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("active hand just passed over button2");
+        }
     }
 }
