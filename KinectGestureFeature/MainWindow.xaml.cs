@@ -119,28 +119,28 @@ namespace KinectGestureFeature
                     Joint handLeft = skel1.Joints[JointType.HandLeft];
                     Joint handRight = skel1.Joints[JointType.HandRight];
 
-                    if (handLeft.TrackingState == JointTrackingState.Tracked && handRight.TrackingState == JointTrackingState.Tracked)
-                    {
-                        //selecting hand closest to sensor
-                        Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
-                        ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
-                        cursor.Flip(activeHand);
-                        cursor.Update(position);
-                        //calling button1_click if active hand is over button1 and is pressed
-                        //need to double check if IsPressed is even the right method to use, could try isGripped
-                        if (activeHandPointer.GetIsOver(button1) && activeHandPointer.IsPressed)
-                        {
-                            //add event handler for button1 click
-                            //RoutedEventArgs e = new RoutedEventArgs();
-                            button1.Click += new RoutedEventHandler(Button1_Click);
-                        }
-                        //button2 being clicked if activeHand just passes over for testing purposes
-                        if (activeHandPointer.GetIsOver(button2))
-                        {
-                            button2.Click += new RoutedEventHandler(Button2_Click);
-                        }
-                        
-                    }
+                    //if (handLeft.TrackingState == JointTrackingState.Tracked && handRight.TrackingState == JointTrackingState.Tracked)
+                    //{
+                    //    //selecting hand closest to sensor
+                    Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
+                    ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                    cursor.Flip(activeHand);
+                    cursor.Update(position);
+                    //    //calling button1_click if active hand is over button1 and is pressed
+                    //    //need to double check if IsPressed is even the right method to use, could try isGripped
+                    //    if (activeHandPointer.GetIsOver(button1) && activeHandPointer.IsPressed)
+                    //    {
+                    //        //add event handler for button1 click
+                    //        //RoutedEventArgs e = new RoutedEventArgs();
+                    //        button1.Click += new RoutedEventHandler(Button1_Click);
+                    //    }
+                    //    //button2 being clicked if activeHand just passes over for testing purposes
+                    //    if (activeHandPointer.GetIsOver(button2))
+                    //    {
+                    //        button2.Click += new RoutedEventHandler(Button2_Click);
+                    //    }
+
+                    //}
                 }
             }
             using (DrawingContext dc = this.drawingGroup.Open())
@@ -154,6 +154,41 @@ namespace KinectGestureFeature
                         if (skel.TrackingState == SkeletonTrackingState.Tracked)
                         {
                             this.drawJoints(skel, dc);
+
+                            Joint handLeft = skel.Joints[JointType.HandLeft];
+                            Joint handRight = skel.Joints[JointType.HandRight];
+
+                            if (handLeft.TrackingState == JointTrackingState.Tracked && handRight.TrackingState == JointTrackingState.Tracked)
+                            {
+                                //selecting hand closest to sensor
+                                Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
+                                //ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                                //cursor.Flip(activeHand);
+                                //cursor.Update(position);
+                                //calling button1_click if active hand is over button1 and is pressed
+                                //need to double check if IsPressed is even the right method to use, could try isGripped
+                                //if (activeHandPointer.GetIsOver(button1) && activeHandPointer.IsPressed)
+                                //{
+                                //    //add event handler for button1 click
+                                //    //RoutedEventArgs e = new RoutedEventArgs();
+                                //    button1.Click += new RoutedEventHandler(Button1_Click);
+                                //}
+                                //button2 being clicked if activeHand just passes over for testing purposes
+                                //if (activeHandPointer.GetIsOver(button2))
+                                //{
+                                    
+                                //    button2.Click += new RoutedEventHandler(Button2_Click);
+                                    
+                                //}
+
+                                if (activeHand.Position.X.Equals(button2.ActualWidth) && activeHand.Position.Y.Equals(button2.ActualHeight))
+                                {
+                                    button2.Click += new RoutedEventHandler(Button2_Click);
+                                }
+
+                            }
+
+
                         }
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
                         {
@@ -216,26 +251,26 @@ namespace KinectGestureFeature
             //just checks if the hand's x coord is higher than center hip's x coord
             Joint hipCenter = skel.Joints[JointType.HipCenter];
             
-            if (rightHand.TrackingState == JointTrackingState.Tracked)
-            {
-                if (rightHand.Position.X > hipCenter.Position.X)
-                {
-                    rightHandActiveTextBox.Text = "yes";
-                }
-                else
-                {
-                    rightHandActiveTextBox.Text = "no";
-                }
+            //if (rightHand.TrackingState == JointTrackingState.Tracked)
+            //{
+            //    if (rightHand.Position.X > hipCenter.Position.X)
+            //    {
+            //        rightHandActiveTextBox.Text = "yes";
+            //    }
+            //    else
+            //    {
+            //        rightHandActiveTextBox.Text = "no";
+            //    }
 
-                if (skel.Joints[JointType.WristLeft].Position.X > skel.Joints[JointType.HipCenter].Position.X)
-                {
-                    leftHandActiveTextBox.Text = "yes";
-                }
-                else
-                {
-                    leftHandActiveTextBox.Text = "no";
-                }
-            }
+            //    if (skel.Joints[JointType.WristLeft].Position.X > skel.Joints[JointType.HipCenter].Position.X)
+            //    {
+            //        leftHandActiveTextBox.Text = "yes";
+            //    }
+            //    else
+            //    {
+            //        leftHandActiveTextBox.Text = "no";
+            //    }
+            //}
 
             //old code, up for deletion
             //This should track a cursor to the active hand, needs testing

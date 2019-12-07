@@ -21,15 +21,11 @@
         <TextBox x:Name="leftHandZPosTextBox" HorizontalAlignment="Left" Height="23" Margin="19,205,0,0" TextWrapping="Wrap" Text="Z: " VerticalAlignment="Top" Width="56"/>
         <TextBox x:Name="rightHandZPosYTextBox" HorizontalAlignment="Left" Height="23" Margin="145,205,0,0" TextWrapping="Wrap" Text="Z:" VerticalAlignment="Top" Width="73"/>
         <Label x:Name="label_Copy3" Content="Z" HorizontalAlignment="Left" Margin="106,205,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Active" HorizontalAlignment="Left" Margin="85,248,0,0" VerticalAlignment="Top" Height="28" Width="61"/>
-        <TextBox x:Name="rightHandActiveTextBox" HorizontalAlignment="Left" Height="23" Margin="146,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
-        <TextBox x:Name="leftHandActiveTextBox" HorizontalAlignment="Left" Height="23" Margin="7,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
-        <Label x:Name="label" Content="Active: when a hand is&#xA;above the waist &#xA;&#xA;dots go there -&gt;" HorizontalAlignment="Left" Margin="41,281,0,0" VerticalAlignment="Top" Height="82" Width="162"/>
 
         <k:KinectTileButton Click="Button1_Click" x:Name="button1" Content="button1" HorizontalAlignment="Left" Margin="339,222,0,0" VerticalAlignment="Top" Height="54" Width="134"/>
         
 
-        <Controls:KinectCursor x:Name="cursor" Width="100" Height="100" Margin="259,601,1003,543" />
+        <Controls:KinectCursor x:Name="cursor" Width="100" Height="100"/>
         
         <k:KinectCircleButton Click="Button2_Click" x:Name="button2" Content="button2" HorizontalAlignment="Left" Margin="296,297,0,0" VerticalAlignment="Top" Height="113" Width="216" ContentForeground="#FF82FD06" ContentPressedForeground="#FFDA4B4B" Foreground="#FFEE0F0F"/>
 
