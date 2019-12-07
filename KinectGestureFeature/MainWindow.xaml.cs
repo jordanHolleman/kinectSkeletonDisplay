@@ -42,15 +42,22 @@ namespace KinectGestureFeature
         //no bone tracking yet, save that for later
         //activate sensor
         private KinectSensor sensor;
+        
         //drawing group for skeleton rendering
         private DrawingGroup drawingGroup;
         //drwawing image to be displayed
         private DrawingImage imageSource;
         private const double JointThickness = 10;
 
-        private HandPointer activeHandPointer;
+        //private HandPointerEventArgs e;
+        HandPointer activeHandPointer;
+        
 
-   
+        
+        KinectRegion kRegion = new KinectRegion();
+        
+        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -122,10 +129,10 @@ namespace KinectGestureFeature
                     //if (handLeft.TrackingState == JointTrackingState.Tracked && handRight.TrackingState == JointTrackingState.Tracked)
                     //{
                     //    //selecting hand closest to sensor
-                    Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
-                    ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
-                    cursor.Flip(activeHand);
-                    cursor.Update(position);
+                    //    Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
+                    //    ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                    //    cursor.Flip(activeHand);
+                    //    cursor.Update(position);
                     //    //calling button1_click if active hand is over button1 and is pressed
                     //    //need to double check if IsPressed is even the right method to use, could try isGripped
                     //    if (activeHandPointer.GetIsOver(button1) && activeHandPointer.IsPressed)
@@ -139,7 +146,7 @@ namespace KinectGestureFeature
                     //    {
                     //        button2.Click += new RoutedEventHandler(Button2_Click);
                     //    }
-
+                        
                     //}
                 }
             }
@@ -162,9 +169,9 @@ namespace KinectGestureFeature
                             {
                                 //selecting hand closest to sensor
                                 Joint activeHand = handRight.Position.Z <= handLeft.Position.Z ? handRight : handLeft;
-                                //ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
-                                //cursor.Flip(activeHand);
-                                //cursor.Update(position);
+                                ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                                cursor.Flip(activeHand);
+                                cursor.Update(position);
                                 //calling button1_click if active hand is over button1 and is pressed
                                 //need to double check if IsPressed is even the right method to use, could try isGripped
                                 //if (activeHandPointer.GetIsOver(button1) && activeHandPointer.IsPressed)
@@ -173,12 +180,14 @@ namespace KinectGestureFeature
                                 //    //RoutedEventArgs e = new RoutedEventArgs();
                                 //    button1.Click += new RoutedEventHandler(Button1_Click);
                                 //}
-                                //button2 being clicked if activeHand just passes over for testing purposes
+                                ////button2 being clicked if activeHand just passes over for testing purposes
                                 //if (activeHandPointer.GetIsOver(button2))
                                 //{
+
                                     
+
                                 //    button2.Click += new RoutedEventHandler(Button2_Click);
-                                    
+
                                 //}
 
                                 if (activeHand.Position.X.Equals(button2.ActualWidth) && activeHand.Position.Y.Equals(button2.ActualHeight))
@@ -272,22 +281,7 @@ namespace KinectGestureFeature
             //    }
             //}
 
-            //old code, up for deletion
-            //This should track a cursor to the active hand, needs testing
-            //selecting hand closest to sensor. Not sure if this is in the right place
-            //source: https://github.com/Vangos/kinect-controls
-            //Joint activeHand = rightHand.Position.Z <= leftHand.Position.Z ? rightHand : leftHand;
-            //get the hand's position relatively to the color image 
-            //var position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution640x480Fps30);
-            //var position with depth
-            //DepthImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(activeHand.Position, DepthImageFormat.Resolution640x480Fps30);
-            //ColorImagePoint position = sensor.CoordinateMapper.MapSkeletonPointToColorPoint(activeHand.Position, ColorImageFormat.RgbResolution1280x960Fps12);
-            //flip the cursor to match the active hand and update its posiition
-            //cursor.Flip(activeHand);
-            //cursor.Update(position);
-            //depthImagePoint Update
-            //cursor.Update(activeHand.Position.X, activeHand.Position.Y);
-            //cursor.Update(activeHand.Position.X, activeHand.Position.Y);
+          
 
         }
 
@@ -303,6 +297,13 @@ namespace KinectGestureFeature
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("active hand just passed over button2");
+        }
+
+        private void OnHandPointerEnter(object sender, HandPointerEventArgs e)
+        {
+
+            this.activeHandPointer = e.HandPointer;
+            
         }
     }
 }
